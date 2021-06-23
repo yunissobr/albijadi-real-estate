@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/yuniwirh/0502677779.com/
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp * $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH
