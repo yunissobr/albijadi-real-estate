@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+li,
+a {
+    font-family: 'Tajawal' !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: "Tajawal";
+    color: #212121;
+    font-weight: 400;
+    display: block;
+    margin: 0 0 15px;
+}
+
+html {
+    direction: rtl;
+}
+
+#lng {
+    margin-left: 1.3rem;
+}
+
+#_keyword,
+#_type,
+#_propertytype,
+#_selectlocationonmap,
+#_chooseimages,
+#_brochure,
+#_ownerinfo,
+.contact_field>h3 {
+    text-align: right;
+}
+
+.slider_area .serach_icon {
+    /* margin-top: -2.8rem;
+    margin-right: -4rem; */
+}
+
+.home_details {
+    direction: ltr;
+}
+
+.accordion_area .faq_ask h3 {
+    text-align: right;
+}
+
+#accordion {
+    text-align: right;
+}
+
+.footer {
+    text-align: right;
+}
+
+.footer .footer_top .footer_widget .newsletter_form button {
+    left: 0;
+    right: auto;
+}
+
+.footer .footer_top .footer_widget .newsletter_form input {
+    padding-right: 1rem;
+}
+
+.about_mission .about_text {
+    text-align: right;
+}
+
+#_generalinfo {
+    text-align: right;
+}
+
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.contact_field {
+    direction: rtl;
+}
+
+.contact-title {
+    text-align: right;
+}
+
+.btn_send {
+    float: right;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 767px) {
+    .property_details_banner .prise_quantity {
+        text-align: right;
+        margin-top: 30px;
+    }
+    .property_details_banner .comfortable_apartment .quality_quantity {
+        float: right;
+    }
+    .property_details_banner,
+    .tx-right-phone {
+        text-align: right;
+    }
+}
+
+.contact-info__icon {
+    margin-left: 20px;
+}
