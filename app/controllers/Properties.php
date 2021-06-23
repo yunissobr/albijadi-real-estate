@@ -67,9 +67,9 @@ class Properties extends Controller
                 $data['toBeUsedFor'] = $_POST['toBeUsedFor'];
                 $data['city'] = $_POST['city'];
                 $data['district'] = $_POST['district'];
-                $data['neighborhood_name'] = $_POST['neighborhood_name'];
+                $data['neighborhood_name'] = isset($_POST['neighborhood_name']) ? $_POST['neighborhood_name'] : '-';
                 $data['street_name'] = $_POST['street_name'];
-                $data['building_no'] = $_POST['building_no'];
+                $data['building_no'] = isset($_POST['building_no']) ? $_POST['building_no'] : '-';
                 $data['direction'] = $_POST['direction'];
                 $data['nbr_of_street'] = $_POST['nbr_of_street'];
                 $data['lat'] = $_POST['lat'];
@@ -115,7 +115,7 @@ class Properties extends Controller
 
                 // uploading brochure
                 $targetDir = ROOT . '/public/files/brochures//';
-                $allowTypes = array('pdf', 'png');
+                $allowTypes = array('pdf', 'jpg', 'png', 'jpeg');
                 $newfilename = $this->generateRandomString(4) . '_' . str_replace(" ", "", basename($_FILES["brochure"]["name"]));
                 $targetFilePath = $targetDir . $newfilename;
                 $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
@@ -138,11 +138,9 @@ class Properties extends Controller
                     }
                 }
                 if ($num_err == 0) {
-                    flash('new_property_feedback', 'Your property has been added');
-                    redirect('properties/newProperty');
+                    redirect('properties/newProperty&success=1');
                 } else {
-                    flash('new_property_feedback', 'You have errors in your form!', 'alert alert-danger');
-                    redirect('properties/newProperty');
+                    redirect('properties/newProperty&success=0');
                 }
             }
         }

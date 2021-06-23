@@ -40,7 +40,7 @@
         <![endif]-->
 
     <!-- header-start -->
-    <?php require_once APPROOT.'/views/inc/header.php'  ?>
+    <?php require_once APPROOT . '/views/inc/header.php'  ?>
     <!-- header-end -->
     <!-- bradcam_area  -->
     <div class="bradcam_area bradcam_bg_1">
@@ -60,7 +60,23 @@
     <!--================FORM add property Area =================-->
     <section class="blog_area section-padding">
         <div class="container">
-            <?php flash('new_property_feedback') ?>
+            <?php if (isset($_GET['success'])) : ?>
+            <?php if ($_GET['success'] == 0) : ?>
+            <div class="alert alert-danger" role="alert" id="alert">
+                <h4 class="alert-heading" id="_error_title">An Error Occured While Adding Your Property!</h4>
+                <p id="_error_body">Please chek your details and try again.</p>
+
+            </div>
+            <?php elseif ($_GET['success'] == 1) : ?>
+            <div class="alert alert-success" role="alert" id="alert">
+                <h4 class="alert-heading" id="_success_title">Well done!</h4>
+                <p id="_success_body">We received your property details. Our team is going to review and accept it as
+                    soon as possible. If
+                    you encounter any problems don't hesitate to contact us.</p>
+
+            </div>
+            <?php endif ?>
+            <?php endif ?>
             <form method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-lg-2"></div>
@@ -69,27 +85,31 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mt-3">
-                                    <input type="text" name="title" placeholder="Title" required="" class="single-input is-valid">
+                                    <input type="text" name="title" placeholder="Title" required=""
+                                        class="single-input is-valid">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mt-3">
-                                    <input type="text" name="age" placeholder="Age"  required="" class="single-input">
+                                    <input type="text" name="age" placeholder="Age" required="" class="single-input">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mt-3">
-                                    <input type="text" name="price" placeholder="Price" required="" class="single-input">
+                                    <input type="text" name="price" placeholder="Price" required=""
+                                        class="single-input">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mt-3">
-                                    <input type="text" name="original_price" placeholder="Original Price" required="" class="single-input">
+                                    <input type="text" name="original_price" placeholder="Original Price" required=""
+                                        class="single-input">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mt-3">
-                                    <input type="text" name="size" placeholder="Size (in sqft)" required="" class="single-input">
+                                    <input type="text" name="size" placeholder="Size (in sqft)" required=""
+                                        class="single-input">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -139,32 +159,38 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="mt-3">
-                                    <input type="text" name="district" placeholder="District" required="" class="single-input">
+                                    <input type="text" name="district" placeholder="District" required=""
+                                        class="single-input">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mt-3">
-                                    <input type="text" name="neighborhood_name" placeholder="Neighborhood Name" required="" class="single-input">
+                                    <input type="text" name="neighborhood_name" placeholder="Neighborhood Name"
+                                        class="single-input">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mt-3">
-                                    <input type="text" name="street_name" placeholder="Street Name" required="" class="single-input">
+                                    <input type="text" name="street_name" placeholder="Street Name" required=""
+                                        class="single-input">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mt-3">
-                                    <input type="text" name="building_no" placeholder="Building No" required="" class="single-input">
+                                    <input type="text" name="building_no" placeholder="Building No"
+                                        class="single-input">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mt-3">
-                                    <input type="text" name="direction" placeholder="Direction" required="" class="single-input">
+                                    <input type="text" name="direction" placeholder="Direction" required=""
+                                        class="single-input">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="mt-3">
-                                    <input type="text" name="nbr_of_street" placeholder="Number Of Street" required="" class="single-input">
+                                    <input type="text" name="nbr_of_street" placeholder="Number Of Street" required=""
+                                        class="single-input">
                                 </div>
                             </div>
 
@@ -188,7 +214,8 @@
                                 <input type="file" name="brochure" required="" class="single-input">
                             </div>
                             <div class="col-md-12 mt-4">
-                                <textarea class="single-textarea" name="description" placeholder="Description" required=""></textarea>
+                                <textarea class="single-textarea" name="description" placeholder="Description"
+                                    required=""></textarea>
                             </div>
                         </div>
                         <div class="mt-5">
@@ -196,17 +223,20 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mt-3">
-                                        <input type="text" name="full_name" placeholder="Full Name" required="" class="single-input">
+                                        <input type="text" name="full_name" placeholder="Full Name" required=""
+                                            class="single-input">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mt-3">
-                                        <input type="text" name="email" placeholder="Email" required="" class="single-input">
+                                        <input type="text" name="email" placeholder="Email" required=""
+                                            class="single-input">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mt-3">
-                                        <input type="text" name="phone" placeholder="Phone no." required="" class="single-input">
+                                        <input type="text" name="phone" placeholder="Phone no." required=""
+                                            class="single-input">
                                     </div>
                                 </div>
                                 <div class="col-md-12 mt-5">
@@ -237,26 +267,7 @@
     var lat = document.getElementById('lat');
     var lng = document.getElementById('lng');
 
-    // $(document).ready(function() {
-    //     console.log('ready');
-    //     $("#type").change(function() {
-    //         console.log('changed')
-    //         var val = $(this).val();
-    //         console.log(val)
-    //         if (val == 'SALE' ) {
-    //             $("#category").html(
-    //                 "<option value='0'>Category</option> <option value='<?php #echo 'lands' ?>'><?php #echo lands ?></option> <option value='<?php #echo 'buildings' ?>'><?php #echo buildings ?></option> <option value='<?php #echo 'villas' ?>'><?php #echo villas ?></option> <option value='<?php #echo 'apartments' ?>'><?php #echo apartments ?></option> <option value='<?php #echo 'farms' ?>'><?php #echo farms ?></option> <option value='<?php #echo 'other' ?>'><?php #echo other ?></option> "
-    //                 );
 
-    //         } else if (val == 'RENT' ) {
-    //             $("#category").html(
-    //                 "<option value='0'>Category</option> <option value='<?php #echo 'lands' ?>'><?php #echo lands ?></option> <option value='<?php #echo 'buildings' ?>'><?php #echo buildings ?></option> <option value='<?php #echo 'villas' ?>'><?php #echo villas ?></option> <option value='<?php #echo 'apartments' ?>'><?php #echo apartments ?></option> <option value='<?php #echo 'farms' ?>'><?php #echo farms ?></option> <option value='<?php #echo 'floors' ?>'><?php #echo floors ?></option>  <option value='<?php #echo 'storesandOffices' ?>'><?php #echo storesandOffices ?></option> <option value='<?php #echo 'other' ?>'><?php #echo other ?></option>"
-    //                 );
-    //         }
-    //     });
-
-
-    // });
 
     var mymap = L.map('mapid').setView([30.25, -8.52], 3);
     L.tileLayer(
@@ -282,14 +293,14 @@
     <!--================FORM add property Area =================-->
 
     <!-- footer start -->
-   <?php require_once APPROOT.'/views/inc/footer.php'  ?>
+    <?php require_once APPROOT . '/views/inc/footer.php'  ?>
     <!--/ footer end  -->
 
     <style>
     .bradcam_bg_1 {
-    background-image: url(../img/banner/add_property.png);
-}
-</style>
+        background-image: url(../img/banner/add_property.png);
+    }
+    </style>
 
     <!-- JS here -->
     <script src="<?php echo URLROOT ?>js/vendor/modernizr-3.5.0.min.js"></script>
